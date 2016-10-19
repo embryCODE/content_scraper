@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/embryCODE/portfolio6_content_scraper/issues"
   },
-  "homepage": "https://github.com/embryCODE/portfolio6_content_scraper#readme"
+  "homepage": "https://github.com/embryCODE/portfolio6_content_scraper#readme",
+  "dependencies": {
+    "x-ray": "^2.3.1"
+  }
 }
