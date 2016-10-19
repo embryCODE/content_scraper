@@ -1,7 +1,7 @@
 {
   "name": "portfolio6_content_scraper",
   "version": "1.0.0",
-  "description": "A utility that scrapes a website for item and pricing info and saves to a CSV file.",
+  "description": "A utility to scrape a website for item and pricing info and save the results to a CSV file.",
   "main": "scraper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
