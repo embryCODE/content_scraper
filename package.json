@@ -4,6 +4,7 @@
   "description": "A utility to scrape a website for item and pricing info and save the results to a CSV file.",
   "main": "scraper.js",
   "scripts": {
+    "lint": "eslint **.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,5 +24,8 @@
   "dependencies": {
     "json2csv": "^3.7.0",
     "x-ray": "^2.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1"
   }
 }

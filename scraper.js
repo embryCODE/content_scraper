@@ -54,6 +54,7 @@
     create and save CSV file in data directory.
     If error, call logError(). */
     if (!error) {
+      var resultsCSV;
 
       try {
         resultsCSV = json2csv({
@@ -74,9 +75,9 @@
       }
 
       // Set CSV file name with yyyy-mm-dd.
-      csvFileName = date.getFullYear() +
-        "-" + date.getMonth() +
-        "-" + date.getDate();
+      var csvFileName = date.getFullYear() +
+        '-' + date.getMonth() +
+        '-' + date.getDate();
 
       // Write CSV file to data directory.
       fs.writeFile('data/' + csvFileName + '.csv', resultsCSV, function(err) {
