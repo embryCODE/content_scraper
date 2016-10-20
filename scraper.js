@@ -10,11 +10,11 @@
 
     // Create directory 'data' if it doesn't already exist.
     function createDir(dirName) {
-      try {
-        fs.statSync(dirName);
-      } catch(e) {
-        fs.mkdirSync(dirName);
-      }
+        try {
+            fs.statSync(dirName);
+        } catch (e) {
+            fs.mkdirSync(dirName);
+        }
     }
     createDir('data');
 
@@ -41,26 +41,28 @@
     )(function(error, data) {
         resultsJSON = data;
 
-        // Create timestamp
-        var dt = new Date();
-        var utcDate = dt.toUTCString();
+        // Create timestamp of when scrape is completed.
+        var date = new Date();
+        var formattedDate = date.toUTCString();
 
-        resultsCSV = json2csv({
-            data: resultsJSON,
-            fields: [
-                'Title',
-                'Price',
-                'ImageURL',
-                'URL',
-                {
-                    label: 'Time',
-                    default: utcDate
-                }
-            ]
-        });
+        try {
+            resultsCSV = json2csv({
+                data: resultsJSON,
+                fields: [
+                    'Title',
+                    'Price',
+                    'ImageURL',
+                    'URL', {
+                        label: 'Time',
+                        default: formattedDate
+                    }
+                ]
+            });
+        } catch (err) {
+            console.error(err);
+        }
 
         fs.writeFile('data/' + csvFileName + '.csv', resultsCSV);
-
     });
 
 })();
