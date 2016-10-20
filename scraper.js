@@ -23,22 +23,27 @@
     var day = currentDate.getDate();
     var month = currentDate.getMonth() + 1;
     var year = currentDate.getFullYear();
-    dateToday = year + "-" + month + "-" + day;
-    fs.writeFileSync('data/' + dateToday + '.csv');
+    csvFileName = year + "-" + month + "-" + day;
 
 
 
     var resultsJSON;
 
-    xray('http://www.shirts4mike.com/', {
-        shirts: xray('.shirts a@href', xray('.products li', [{
-            Title: 'a img@alt',
-            Price: xray('a@href', '.shirt-details h1 span'),
-            ImageURL: xray('a@href', '.shirt-picture img@src'),
-            URL: 'a@href'
-        }]))
-    })(function(error, data) {
-        resultsJSON = JSON.stringify(data);
+    xray('http://www.shirts4mike.com/',
+        xray('.shirts a@href',
+            xray('.products li', [{
+                Title: 'a img@alt',
+                Price: xray('a@href', '.shirt-details h1 span'),
+                ImageURL: xray('a@href', '.shirt-picture img@src'),
+                URL: 'a@href'
+            }])
+        )
+    )(function(error, data) {
+        resultsJSON = data;
+
+        // Create timestamp
+        var dt = new Date();
+        var utcDate = dt.toUTCString();
 
         resultsCSV = json2csv({
             data: resultsJSON,
@@ -47,10 +52,15 @@
                 'Price',
                 'ImageURL',
                 'URL',
-                'Time'
+                {
+                    label: 'Time',
+                    default: utcDate
+                }
             ]
         });
-        console.log(resultsCSV);
+
+        fs.writeFile('data/' + csvFileName + '.csv', resultsCSV);
+
     });
 
 })();
