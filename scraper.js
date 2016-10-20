@@ -31,14 +31,12 @@
     var resultsJSON;
 
     xray('http://www.shirts4mike.com/', {
-        shirt_catalog: xray('.shirts a@href', {
-            shirts: xray('.products li', [{
-                Title: 'a img@alt',
-                Price: xray('a@href', '.shirt-details h1 span'),
-                ImageURL: xray('a@href', '.shirt-picture img@src'),
-                URL: 'a@href'
-            }])
-        })
+        shirts: xray('.shirts a@href', xray('.products li', [{
+            Title: 'a img@alt',
+            Price: xray('a@href', '.shirt-details h1 span'),
+            ImageURL: xray('a@href', '.shirt-picture img@src'),
+            URL: 'a@href'
+        }]))
     })(function(error, data) {
         resultsJSON = JSON.stringify(data);
 
