@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/embryCODE/portfolio6_content_scraper#readme",
   "dependencies": {
+    "json2csv": "^3.7.0",
     "x-ray": "^2.3.1"
   }
 }

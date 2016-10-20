@@ -3,9 +3,10 @@
     'use_strict';
 
     // Modules
-    var fs = require('fs');
-    var Xray = require('x-ray');
-    var xray = new Xray();
+    var fs = require('fs'),
+        Xray = require('x-ray'),
+        xray = new Xray(),
+        json2csv = require('json2csv');
 
     // Create directory 'data' if it doesn't already exist.
     function createDir(dirName) {
@@ -40,7 +41,18 @@
         })
     })(function(error, data) {
         resultsJSON = JSON.stringify(data);
-        console.log(resultsJSON);
+
+        resultsCSV = json2csv({
+            data: resultsJSON,
+            fields: [
+                'Title',
+                'Price',
+                'ImageURL',
+                'URL',
+                'Time'
+            ]
+        });
+        console.log(resultsCSV);
     });
 
 })();
