@@ -23,7 +23,7 @@
     var month = currentDate.getMonth() + 1;
     var year = currentDate.getFullYear();
     dateToday = year + "-" + month + "-" + day;
-    fs.writeFile('data/' + dateToday + '.csv');
+    fs.writeFileSync('data/' + dateToday + '.csv');
 
 
 
