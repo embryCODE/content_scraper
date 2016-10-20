@@ -27,30 +27,20 @@
 
 
 
-    //xray('http://www.shirts4mike.com/', [{
-        //Title: '.repo-list-name',
-        //Price: '.repo-list-name a[href]',
-        //ImageURL: 'body'
-        //URL: '',
-        //Time: ''
-    //}])
-    //.paginate('.shirts a@href')
-    //.limit(2)
-    //.write('test.csv');
+    var resultsJSON;
 
     xray('http://www.shirts4mike.com/', {
         shirt_catalog: xray('.shirts a@href', {
             shirts: xray('.products li', [{
                 Title: 'a img@alt',
-                details: xray('a@href', {
-                    Price: '.shirt-details h1 span',
-                    ImageURL: '.shirt-picture img@src'
-                }),
+                Price: xray('a@href', '.shirt-details h1 span'),
+                ImageURL: xray('a@href', '.shirt-picture img@src'),
                 URL: 'a@href'
             }])
         })
-    }).write('test.csv');
-
-
+    })(function(error, data) {
+        resultsJSON = JSON.stringify(data);
+        console.log(resultsJSON);
+    });
 
 })();
