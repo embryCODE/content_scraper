@@ -25,7 +25,15 @@
     var year = currentDate.getFullYear();
     csvFileName = year + "-" + month + "-" + day;
 
+    // Log error.
+    function logError(date, error) {
+        var errorText = 'Date: ';
+        errorText += date + '\n';
+        errorText += error + '\n';
+        errorText += '\n';
 
+        console.log(errorText);
+    }
 
     var resultsJSON;
 
@@ -39,30 +47,38 @@
             }])
         )
     )(function(error, data) {
-        resultsJSON = data;
 
         // Create timestamp of when scrape is completed.
         var date = new Date();
-        var formattedDate = date.toUTCString();
 
-        try {
-            resultsCSV = json2csv({
-                data: resultsJSON,
-                fields: [
-                    'Title',
-                    'Price',
-                    'ImageURL',
-                    'URL', {
-                        label: 'Time',
-                        default: formattedDate
-                    }
-                ]
+        if (!error) {
+            resultsJSON = data;
+
+            try {
+                resultsCSV = json2csv({
+                    data: resultsJSON,
+                    fields: [
+                        'Title',
+                        'Price',
+                        'ImageURL',
+                        'URL', {
+                            label: 'Time',
+                            default: date
+                        }
+                    ]
+                });
+            } catch (err) {
+                console.error(err);
+            }
+
+            fs.writeFile('data/' + csvFileName + '.csv', resultsCSV, function(err) {
+                if (err) {
+                    logError(date, err);
+                }
             });
-        } catch (err) {
-            console.error(err);
+        } else {
+            logError(date, error);
         }
-
-        fs.writeFile('data/' + csvFileName + '.csv', resultsCSV);
     });
 
 })();
