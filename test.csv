@@ -1,0 +1,70 @@
+{
+  "shirt_catalog": {
+    "shirts": [
+      {
+        "Title": "Logo Shirt, Red",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=101",
+        "link": {
+          "Price": "$18",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-101.jpg"
+        }
+      },
+      {
+        "Title": "Mike the Frog Shirt, Black",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=102",
+        "link": {
+          "Price": "$20",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-102.jpg"
+        }
+      },
+      {
+        "Title": "Mike the Frog Shirt, Blue",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=103",
+        "link": {
+          "Price": "$20",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-103.jpg"
+        }
+      },
+      {
+        "Title": "Logo Shirt, Green",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=104",
+        "link": {
+          "Price": "$18",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-104.jpg"
+        }
+      },
+      {
+        "Title": "Mike the Frog Shirt, Yellow",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=105",
+        "link": {
+          "Price": "$25",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-105.jpg"
+        }
+      },
+      {
+        "Title": "Logo Shirt, Gray",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=106",
+        "link": {
+          "Price": "$20",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-106.jpg"
+        }
+      },
+      {
+        "Title": "Logo Shirt, Teal",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=107",
+        "link": {
+          "Price": "$20",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-107.jpg"
+        }
+      },
+      {
+        "Title": "Mike the Frog Shirt, Orange",
+        "URL": "http://www.shirts4mike.com/shirt.php?id=108",
+        "link": {
+          "Price": "$25",
+          "ImageURL": "http://www.shirts4mike.com/img/shirts/shirt-108.jpg"
+        }
+      }
+    ]
+  }
+}
