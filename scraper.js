@@ -26,8 +26,11 @@
     errorText += date + '\n';
     errorText += error + '\n';
     errorText += '\n';
-
-    console.log(errorText);
+    fs.appendFile('scraper-error.log', errorText, 'utf8', function(err) {
+      if (err) {
+        console.log('Unable to log error: \n' + err);
+      }
+    });
   }
 
   /* Use x-ray to dig down into appropriate links and pull
@@ -38,13 +41,13 @@
         Title: 'a img@alt',
         Price: xray('a@href', '.shirt-details h1 span'),
         ImageURL: xray('a@href', '.shirt-picture img@src'),
-        URL: 'a@href'
+        URL: 'a@href',
       }])
     )
   )(function(error, data) {
     var resultsJSON = data;
 
-    // Create timestamp of when scrape is completed.
+    // Create timestamp when scrape is completed.
     var date = new Date();
 
     /* Create resultsCSV from resultsJSON using json2csv then
@@ -59,9 +62,10 @@
             'Title',
             'Price',
             'ImageURL',
-            'URL', {
+            'URL',
+            {
               label: 'Time',
-              default: date
+              default: date.toString()
             }
           ]
         });
