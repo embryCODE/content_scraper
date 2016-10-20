@@ -30,7 +30,7 @@
       if (err) {
         console.log('Unable to log error: \n' + err);
       }
-      console.log('An error has been logged in scraper-error.log');
+      console.log(errorText);
     });
   }
 
