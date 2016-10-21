@@ -1,7 +1,5 @@
 'use_strict';
 
-// TEST
-
 /**
  * @file Portfolio Project 6 for Techdegree. Build a Content Scraper.
  * {@link https://teamtreehouse.com/projects/build-a-content-scraper}
