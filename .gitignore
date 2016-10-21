@@ -2,4 +2,3 @@ node_modules
 data
 out
 scraper-error.log
-.eslintrc.json
