@@ -1,32 +1,31 @@
 {
-  "name": "portfolio6_content_scraper",
-  "version": "1.0.0",
-  "description": "A utility to scrape a website for item and pricing info and save the results to a CSV file.",
-  "main": "scraper.js",
-  "scripts": {
-    "lint": "eslint **.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/embryCODE/portfolio6_content_scraper.git"
-  },
-  "keywords": [
-    "treehouse",
-    "scraper"
-  ],
-  "author": "mason@embrycode.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/embryCODE/portfolio6_content_scraper/issues"
-  },
-  "homepage": "https://github.com/embryCODE/portfolio6_content_scraper#readme",
-  "dependencies": {
-    "json2csv": "^3.7.0",
-    "x-ray": "^2.3.1"
-  },
-  "devDependencies": {
-    "eslint": "^3.8.1",
-    "jsdoc": "^3.4.2"
-  }
+    "name": "portfolio6_content_scraper",
+    "version": "1.0.0",
+    "description": "Portfolio Project 6 from Treehouse Techdegree.",
+    "author": "mason@embrycode.com",
+    "license": "MIT",
+    "main": "scraper.js",
+    "keywords": [
+        "treehouse",
+        "scraper"
+    ],
+    "scripts": {
+        "lint": "eslint **.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/embryCODE/portfolio6_content_scraper.git"
+    },
+    "bugs": {
+        "url": "https://github.com/embryCODE/portfolio6_content_scraper/issues"
+    },
+    "homepage": "https://github.com/embryCODE/portfolio6_content_scraper#readme",
+    "dependencies": {
+        "json2csv": "^3.7.0",
+        "x-ray": "^2.3.1"
+    },
+    "devDependencies": {
+        "eslint": "^3.8.1",
+        "jsdoc": "^3.4.2"
+    }
 }
