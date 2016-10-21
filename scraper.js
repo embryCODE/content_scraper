@@ -4,19 +4,33 @@
  * @file Portfolio Project 6 for Techdegree. Build a Content Scraper.
  * {@link https://teamtreehouse.com/projects/build-a-content-scraper}
  * @author Mason Embry <mason@embrycode.com>
- *
- * @requires fs
- * @requires x-ray
- * @requires json2csv
- *
+ */
+
+ /**
+ * Scraper module for Treehouse Techdegree.
+ * @module scraper
  */
 
 
 
-// Modules
+
+/**
+ * Requires fs module.
+ * @requires fs
+ */
 var fs = require('fs'),
+
+  /**
+   * Requires x-ray module.
+   * @requires x-ray
+   */
   Xray = require('x-ray'),
   xray = new Xray(),
+
+  /**
+   * Requires json2csv module.
+   * @requires json2csv
+   */
   json2csv = require('json2csv');
 
 
