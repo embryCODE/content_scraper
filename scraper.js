@@ -11,16 +11,20 @@
  *
  */
 
+
+
 // Modules
 var fs = require('fs'),
   Xray = require('x-ray'),
   xray = new Xray(),
   json2csv = require('json2csv');
 
+
+
 /**
-  * Create directory 'data' if it doesn't already exist.
-  * @param {string} dirName Name of directory to create.
-  */
+ * Create directory 'data' if it doesn't already exist.
+ * @param {string} dirName Name of directory to create.
+ */
 function createDir(dirName) {
   try {
     fs.statSync(dirName);
@@ -50,9 +54,9 @@ function logError(timestamp, error) {
 }
 
 /**
-  * Use x-ray to dig down into appropriate links and pull
-  * Title, Price, ImageURL, and URL from page.
-  */
+ * Use x-ray to dig down into appropriate links and pull
+ * Title, Price, ImageURL, and URL from page.
+ */
 xray('http://www.shirts4mike.com/',
   xray('.shirts a@href',
     xray('.products li', [{
@@ -68,11 +72,9 @@ xray('http://www.shirts4mike.com/',
   // Create timestamp when scrape is completed.
   var timestamp = new Date();
 
-  /**
-   * Create resultsCSV from resultsJSON using json2csv then
-   * create and save CSV file in data directory.
-   * If error, call logError().
-   */
+  /* Create resultsCSV from resultsJSON using json2csv then
+  create and save CSV file in data directory.
+  If error, call logError(). */
   if (!error) {
     var resultsCSV;
 
@@ -98,9 +100,7 @@ xray('http://www.shirts4mike.com/',
       '-' + timestamp.getMonth() +
       '-' + timestamp.getDate();
 
-    /**
-     * Write CSV file to data directory.
-     */
+    // Write CSV file to data directory.
     fs.writeFile('data/' + csvFileName + '.csv', resultsCSV, function(err) {
       if (err) {
         logError(timestamp, err);
