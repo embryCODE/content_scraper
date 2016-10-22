@@ -27,5 +27,12 @@
   "devDependencies": {
     "eslint": "^3.8.1",
     "jsdoc": "^3.4.2"
+  },
+  "jshintConfig": {
+    "strict": "global",
+    "globals": {
+      "require": true,
+      "console": true
+    }
   }
 }
