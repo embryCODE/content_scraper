@@ -1,4 +1,4 @@
-'use_strict';
+'use strict';
 
 /**
  * @file Portfolio Project 6 for Techdegree. Build a Content Scraper.
