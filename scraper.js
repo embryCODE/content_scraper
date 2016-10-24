@@ -111,7 +111,7 @@ xray('http://www.shirts4mike.com/',
 
     // Set CSV file name with yyyy-mm-dd.
     var csvFileName = timestamp.getFullYear() +
-      '-' + timestamp.getMonth() +
+      '-' + (timestamp.getMonth() + 1) +
       '-' + timestamp.getDate();
 
     // Write CSV file to data directory.
