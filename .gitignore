@@ -2,3 +2,4 @@ node_modules
 data
 out
 scraper-error.log
+npm-debug.log
