@@ -5,7 +5,8 @@ Project 6 - Build a Content Scraper
 
 Instructions
 =====
-Imagine you work at a price comparison website. You’ve been given the task to create a Node.js command line application that goes to an ecommerce site to get the latest prices and save them to a spreadsheet (CSV format). This spreadsheet will be used by another application to populate a database. The application you build will be run once every day. To complete this project, you'll need to research and use npm packages that will help you scrape a website and create a CSV file.
+
+https://teamtreehouse.com/projects/build-a-content-scraper
 
 x-ray
 ===========
